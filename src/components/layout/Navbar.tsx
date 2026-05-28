@@ -6,6 +6,7 @@ export function Navbar() {
       <Link to="/">Home</Link>
       <Link to="/sobre">Sobre</Link>
       <Link to="/cases">Cases</Link>
+      <Link to="/login">Login</Link>
       <Link to="/contato">Contato</Link>
     </nav>
   )

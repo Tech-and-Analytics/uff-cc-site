@@ -47,6 +47,8 @@
     --color-brand-vibrant: #C691E7;
     --color-neutral-medium: #7C7C7C;
     --color-neutral-light: #C9C9C9;
+    --color-error-bg: var(--error-bg);
+    --color-error-text: var(--error-text);
     --radius-sm: calc(var(--radius) * 0.6);
     --radius-md: calc(var(--radius) * 0.8);
     --radius-lg: var(--radius);
@@ -86,6 +88,8 @@
 
     /* Feedback */
     --destructive: #dc2626;
+    --error-bg: #FCE8E6;
+    --error-text: #A51D24;
 
     /* Borders */
     --border: #C9C9C9;
