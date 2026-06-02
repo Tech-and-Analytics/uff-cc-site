@@ -9,10 +9,11 @@ import { Cases } from "@/pages/Cases"
 import { Contact } from "@/pages/Contact"
 import { NotFound } from "@/pages/NotFound"
 import { Login } from "@/pages/Login"
-import { Dashboard } from "@/pages/Dashboard"
+import { Dashboard } from "@/pages/Dashboard/Dashboard"
 import { Biblioteca } from "@/pages/Biblioteca"
-import { Simulado } from "@/pages/Simulado"
-import { Perfil } from "@/pages/Perfil"
+import { Simulado } from "@/pages/Simulados/TelaSimulados"
+import { Perfil } from "@/pages/Perfil/Perfil"
+import { Trilhas } from "@/pages/Trilhas/Trilhas"
 
 export function AppRoutes() {
   return (
@@ -25,6 +26,7 @@ export function AppRoutes() {
           <Route path="/simulado" element={<Simulado />} />
           <Route path="/perfil" element={<Perfil />} />
           <Route path="/biblioteca" element={<Biblioteca />}/>
+          <Route path="/trilhas" element={<Trilhas/>}/>
         </Route>
 
         <Route element={<Layout />}>
