@@ -3,10 +3,10 @@ import type { Trilha } from "@/types/Trilhas"
 export const LISTA_DE_TRILHAS: Trilha[] = [
   {
     id: "trilha-001",
-    titulo: "Formação em Consultoria Estratégica",
+    titulo: "Graduate Management Admission Test - GMAT",
     categoria: "GESTÃO E NEGÓCIOS",
     descricao: "Domine as principais ferramentas de diagnóstico empresarial e resolução de cases.",
-    progressoAtual: 33,
+    progressoAtual: 0,
     totalModulos: 4,
     itens: [
       {

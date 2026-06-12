@@ -14,7 +14,7 @@ import { Biblioteca } from "@/pages/Biblioteca"
 import { Simulado } from "@/pages/Simulados/TelaSimulados"
 import { Perfil } from "@/pages/Perfil/Perfil"
 import { Trilhas } from "@/pages/Trilhas/Trilhas"
-
+import { TelaMaterial } from "@/pages/Trilhas/TelaMaterial"
 export function AppRoutes() {
   return (
     <BrowserRouter>
@@ -27,6 +27,8 @@ export function AppRoutes() {
           <Route path="/perfil" element={<Perfil />} />
           <Route path="/biblioteca" element={<Biblioteca />}/>
           <Route path="/trilhas" element={<Trilhas/>}/>
+          <Route path="/material/:id" element={<TelaMaterial />} />
+          <Route path="/simulado/:id" element={<Simulado />} />
         </Route>
 
         <Route element={<Layout />}>

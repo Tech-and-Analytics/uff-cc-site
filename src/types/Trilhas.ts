@@ -20,3 +20,14 @@ export interface Trilha {
   totalModulos: number;
   itens: ItemTrilha[]; // Array contendo a lista de conteúdos e questões
 }
+
+//estrutura do material das trilhas
+export interface MaterialDetalhado {
+  id: string;
+  titulo: string;
+  categoria: string;
+  tipo: "material_texto" | "videoaula";
+  conteudoHTML: string;
+  videoUrl?: string; 
+  proximoItemId?: string;
+}
