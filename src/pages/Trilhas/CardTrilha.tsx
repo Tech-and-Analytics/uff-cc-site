@@ -7,6 +7,11 @@ interface CardTrilhaProps {
 }
 
 export function CardTrilha({ trilha, onAbrir }: CardTrilhaProps) {
+  // Calculamos o progresso dinamicamente com base nos dados que o próprio Card recebeu
+  const totalItens = trilha.itens.length;
+  const itensConcluidos = trilha.itens.filter((item) => item.concluido).length;
+  const progressoCalculado = totalItens === 0 ? 0 : Math.round((itensConcluidos / totalItens) * 100);
+
   return (
     <div className="rounded-2xl border border-border bg-card p-6 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
       <div>
@@ -27,12 +32,13 @@ export function CardTrilha({ trilha, onAbrir }: CardTrilhaProps) {
         <div className="mb-6">
           <div className="flex justify-between items-center text-xs mb-2">
             <span className="font-semibold text-neutral-medium">Progresso</span>
-            <span className="font-bold text-brand-primary">{trilha.progressoAtual}%</span>
+            {/* Utilizamos a nossa constante local de cálculo */}
+            <span className="font-bold text-brand-primary">{progressoCalculado}%</span>
           </div>
           <div className="w-full bg-muted h-2 rounded-full overflow-hidden">
             <div 
               className="bg-brand-primary h-full transition-all duration-500" 
-              style={{ width: `${trilha.progressoAtual}%` }}
+              style={{ width: `${progressoCalculado}%` }}
             />
           </div>
           <p className="text-xs text-neutral-medium mt-2">
@@ -40,18 +46,18 @@ export function CardTrilha({ trilha, onAbrir }: CardTrilhaProps) {
           </p>
         </div>
       </div>
-
-      {/* Botão padronizado de ação Outline/Primário */}
+      
+      {/* Botão de ação */}
       <Button 
         onClick={() => onAbrir(trilha)}
-        className={`w-full h-11 font-semibold rounded-lg flex items-center justify-center transition-colors ${
-          trilha.progressoAtual > 0 
+        className={`w-full h-11 font-semibold rounded-lg flex items-center justify-center transition-colors mt-4 ${
+          progressoCalculado > 0 
             ? "bg-brand-dark hover:bg-brand-primary text-white" 
             : "border border-brand-dark bg-transparent text-brand-dark hover:bg-brand-light/20"
         }`}
       >
-        {trilha.progressoAtual > 0 ? "Continuar Trilha" : "Iniciar Trilha"}
+        {progressoCalculado > 0 ? "Continuar Trilha" : "Iniciar Trilha"}
       </Button>
     </div>
-  );
+  )
 }

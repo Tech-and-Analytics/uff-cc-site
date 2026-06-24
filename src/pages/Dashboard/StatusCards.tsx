@@ -1,4 +1,4 @@
-import type { DashboardMetrics } from "@/lib/dashboard"
+import type { DashboardMetrics } from "@/pages/Dashboard/dashboard"
 import { cn } from "@/lib/utils"
 
 type StatusCardsProps = {

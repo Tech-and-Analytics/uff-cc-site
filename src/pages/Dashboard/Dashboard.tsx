@@ -2,19 +2,69 @@ import { useNavigate } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { ProgressSection } from "@/pages/Dashboard/ProgressSection"
 import { StatusCards } from "@/pages/Dashboard/StatusCards"
-import { defaultDashboardData } from "@/lib/dashboard"
+
+// Importe a sua lista de trilhas (ajuste o caminho conforme a sua pasta real)
+import { LISTA_DE_TRILHAS } from "@/pages/Trilhas/mockTrilhas" 
+// O defaultDashboardData ainda pode ser importado se você quiser manter a média de acertos estática por enquanto
+//import { defaultDashboardData } from "@/pages/Dashboard/dashboard"
 
 export function Dashboard() {
-  const { progressoAtual, metricas } = defaultDashboardData
-  
-  // Inicializamos o hook de navegação do React Router
   const navigate = useNavigate()
+  
+  // 1. Contadores para os Cards (Trilhas inteiras)
+  let trilhasConcluidas = 0
+  let trilhasEmAndamento = 0
+  let trilhasNaoIniciadas = 0
+
+  // 2. Contadores para a Barra de Progresso (Aulas/Conteúdos individuais)
+  let totalItensGlobais = 0
+  let concluidosGlobais = 0
+
+  // Varremos cada trilha para aplicar as regras
+  LISTA_DE_TRILHAS.forEach((trilha) => {
+    const totalItens = trilha.itens.length
+    const concluidos = trilha.itens.filter((item) => item.concluido).length
+
+    // Soma para a barra de progresso geral
+    totalItensGlobais += totalItens
+    concluidosGlobais += concluidos
+
+    // Regra de Status da Trilha
+    if (totalItens > 0) {
+      if (concluidos === totalItens) {
+        // Só é "Concluída" se TODOS os itens estiverem marcados
+        trilhasConcluidas++
+      } else if (concluidos > 0) {
+        // Se tem pelo menos 1 feito, mas não todos, está "Em andamento"
+        trilhasEmAndamento++
+      } else {
+        // Se nenhum foi feito (0), está "Não iniciada"
+        trilhasNaoIniciadas++
+      }
+    }
+  })
+
+  // Calcula a porcentagem geral 
+  const progressoGeral = totalItensGlobais === 0 
+    ? 0 
+    : Math.round((concluidosGlobais / totalItensGlobais) * 100)
+
+  // Atualiza as métricas dinamicamente para os StatusCards
+  const metricasDinamicas = {
+    concluidos: trilhasConcluidas,
+    emAndamento: trilhasEmAndamento,
+    naoIniciados: trilhasNaoIniciadas,
+    //mediaAcertos: defaultDashboardData.metricas.mediaAcertos, // Mantém estático por enquanto
+  }
 
   return (
     <main className="flex flex-1 flex-col gap-8 p-10 bg-background">
       <section>
-        <ProgressSection progressoAtual={progressoAtual} />
-        <StatusCards metricas={metricas} />
+        {/* Passa o nosso novo valor calculado para a barra */}
+        <ProgressSection progressoAtual={progressoGeral} />
+        
+        {/* Passa as métricas dinâmicas para os cards superiores */}
+        <StatusCards metricas={metricasDinamicas} />
       </section>
 
       {/* Área de Trilhas incorporada no espaço flex-1 restante */}
@@ -27,7 +77,6 @@ export function Dashboard() {
             </p>
           </div>
           
-          {/* Botão primário chamando a rota de trilhas */}
           <Button 
             onClick={() => navigate("/Trilhas")}
             className="bg-brand-dark hover:bg-brand-primary text-white font-semibold h-10 px-6"
@@ -36,9 +85,6 @@ export function Dashboard() {
           </Button>
         </div>
 
-        {/* Estado Vazio (Empty State) ou Banner Promocional para a área de trilhas. 
-          No futuro, você pode substituir esta div pelos "Cards de Trilha" resumidos.
-        */}
         <div className="rounded-2xl border border-border bg-card p-10 flex flex-col items-center justify-center text-center shadow-sm">
           <div className="h-16 w-16 mb-4 text-brand-medium">
             <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -50,7 +96,6 @@ export function Dashboard() {
             Você possui trilhas de aprendizagem disponíveis para impulsionar seu conhecimento em consultoria estratégica.
           </p>
           
-          {/* Botão secundário (outline) também chamando a rota */}
           <Button 
             variant="outline"
             onClick={() => navigate("/trilhas")}

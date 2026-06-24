@@ -14,7 +14,7 @@ export const LISTA_DE_TRILHAS: Trilha[] = [
         titulo: "Introdução à Análise de Dados no Varejo",
         tipo: "videoaula",
         tempoEstimado: "15 min",
-        concluido: true,
+        concluido: false,
       },
       {
         id: "item-2",
