@@ -9,37 +9,43 @@ import { Cases } from "@/pages/Cases"
 import { Contact } from "@/pages/Contact"
 import { NotFound } from "@/pages/NotFound"
 import { Login } from "@/pages/Login"
+
 import { Dashboard } from "@/pages/Dashboard/Dashboard"
 import { Biblioteca } from "@/pages/Biblioteca"
 import { Simulado } from "@/pages/Simulados/TelaSimulados"
 import { Perfil } from "@/pages/Perfil/Perfil"
 import { Trilhas } from "@/pages/Trilhas/Trilhas"
 import { TelaMaterial } from "@/pages/Trilhas/TelaMaterial"
+
 export function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
+
+        {/* AUTH */}
         <Route path="/login" element={<Login />} />
 
+        {/* DASHBOARD */}
         <Route element={<DashboardLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/simulado" element={<Simulado />} />
           <Route path="/perfil" element={<Perfil />} />
-          <Route path="/biblioteca" element={<Biblioteca />}/>
-          <Route path="/trilhas" element={<Trilhas/>}/>
+          <Route path="/biblioteca" element={<Biblioteca />} />
+          <Route path="/trilhas" element={<Trilhas />} />
           <Route path="/material/:id" element={<TelaMaterial />} />
-          <Route path="/simulado/:id" element={<Simulado />} />
         </Route>
 
+        {/* SITE NORMAL */}
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
           <Route path="/sobre" element={<About />} />
           <Route path="/cases" element={<Cases />} />
           <Route path="/contato" element={<Contact />} />
         </Route>
 
+        {/* 404 */}
         <Route path="*" element={<NotFound />} />
+
       </Routes>
     </BrowserRouter>
   )
