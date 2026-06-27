@@ -1,8 +1,10 @@
 import { CaseCard } from "../components/CaseCard";
+import { SEO } from "@/components/SEO"
 
 export function Biblioteca() {
   return (
     <main className="flex flex-1 flex-col p-10">
+      <SEO title="Biblioteca" description="Biblioteca de materiais disponíveis"/>
       <h1 className="text-[40px] font-bold text-brand-dark">
         Biblioteca
       </h1>

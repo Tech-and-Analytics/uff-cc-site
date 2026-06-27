@@ -45,7 +45,7 @@ export function CardSimulado({ simulado, onIniciar }: CardSimuladoProps) {
       </div>
 
       {/* Botão de Ação do Card [cite: 137, 139] */}
-      <Button 
+      <Button
         onClick={() => onIniciar(simulado)}
         className="w-full h-11 border border-brand-dark bg-transparent text-brand-dark hover:bg-brand-light/20 transition-colors font-medium rounded-lg flex items-center justify-center gap-1"
       >
