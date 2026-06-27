@@ -1,10 +1,10 @@
 import { useState } from "react"
 // Importamos todos os sub-componentes que criamos.
-import { Sidebar } from  "@/components/perfil/ProfileSidebar"
-import { InformacoesPessoais } from "@/components/perfil/InformacoesPessoais"
-import { Configuracoes } from "@/components/perfil/Configuracoes"
-import { Historico } from "@/components/perfil/Historico"
-import { Indicadores } from "@/components/perfil/Indicadores"
+import { Sidebar } from  "@/pages/perfil/ProfileSidebar"
+import { InformacoesPessoais } from "@/pages/perfil/InformacoesPessoais"
+import { Configuracoes } from "@/pages/perfil/Configuracoes"
+import { Historico } from "@/pages/perfil/Historico"
+import { Indicadores } from "@/pages/perfil/Indicadores"
 
 export function Perfil() {
   // O estado 'abaAtiva' guarda o ID de qual aba está selecionada.

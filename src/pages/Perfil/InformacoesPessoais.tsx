@@ -55,7 +55,7 @@ export function InformacoesPessoais(){
                 </div>
 
                 <div>
-                    <Label htmlFor="email" className="mb-2 block text-sm"></Label>
+                    <Label htmlFor="email" className="mb-2 block text-sm">Endereço de Email</Label>
                     <Input id="email" type="email" value={form.email} onChange={(e) => updateField("email", e.target.value)} className="h-11 border-input" />
                 </div>
 
