@@ -36,7 +36,7 @@ export function Sidebar() {
           "fixed left-0 top-0 z-50 flex h-screen flex-col border-r border-sidebar-border bg-sidebar transition-all duration-300",
           sidebarOpen ? "translate-x-0" : "-translate-x-full",
           "w-64",
-          "md:relative md:translate-x-0",
+          "md:sticky md:translate-x-0",
           collapsed ? "md:w-20" : "md:w-64"
         )}
       >

@@ -1,29 +1,35 @@
-interface SidebarProps{
+interface SidebarProps {
   abaAtiva: string
   setAbaAtiva: (aba: string) => void;
 }
 
-export function Sidebar({abaAtiva, setAbaAtiva}: SidebarProps){
-  const itensMenu = [ //array de objetos contendo os dados do menu
-    {id: "informacoes", label: "Informações Pessoais"},
-    {id: "historico", label: "Histórico de Simulados"},
-    {id: "configuracoes", label: "Configurações de Conta"},
-    {id: "indicadores", label: "Indicadores de Evolução"}
+export function Sidebar({ abaAtiva, setAbaAtiva }: SidebarProps) {
+  const itensMenu = [ 
+    { id: "informacoes", label: "Informações Pessoais" },
+    { id: "historico", label: "Histórico de Simulados" },
+    { id: "configuracoes", label: "Configurações de Conta" },
+    { id: "indicadores", label: "Indicadores de Evolução" }
   ]
 
-
   return (
-    // 'aside' é uma tag para barras laterais.
-    <aside className="w-64 border-r border-border pr-4 h-full min-h-[calc(100vh-80px)]">
-      <nav className="flex flex-col gap-2">
-        {/* Usamos o .map() para percorrer a lista de itens e renderizar um botão para cada um */}
+    // 1. ASIDE: 
+    // - Mobile: w-full, h-auto, borda inferior (border-b) e margin-bottom (mb-6)
+    // - Desktop (md:): w-64, borda direita (border-r), remove borda inferior e aplica altura mínima
+    <aside className="w-full h-auto mb-6 border-b pb-4 md:mb-0 md:pb-0 md:border-b-0 md:w-64 md:border-r border-border md:pr-4 md:h-full md:min-h-[calc(100vh-80px)] shrink-0">
+      
+      {/* 2. NAV: 
+      // - Mobile: flex-row (horizontal) com overflow-x-auto
+      // - Desktop (md:): flex-col (vertical) sem overflow */}
+      <nav className="flex flex-row md:flex-col gap-2 overflow-x-auto md:overflow-visible custom-scrollbar">
+        
         {itensMenu.map((item) => (
           <button
             key={item.id} 
-            onClick={() => setAbaAtiva(item.id)} // Ao clicar, avisa o componente pai qual item foi selecionado.
-            // A classe (className) muda dinamicamente. Se o item atual for o selecionado, 
-            // aplicamos o fundo roxo claro e texto em negrito. Caso contrário, usamos a cor neutra.
-            className={`flex items-center gap-3 px-4 py-3 rounded-lg text-[12px] text-left transition-colors ${
+            onClick={() => setAbaAtiva(item.id)} 
+            // 3. BOTÃO:
+            // - Adicionado 'whitespace-nowrap' para o texto não quebrar no celular
+            // - O resto das suas classes e lógicas originais foram mantidos!
+            className={`flex whitespace-nowrap items-center gap-3 px-4 py-3 rounded-lg text-[12px] text-left transition-colors ${
               abaAtiva === item.id
                 ? "bg-brand-light/30 text-brand-dark font-semibold"
                 : "text-neutral-medium hover:bg-muted"
@@ -32,6 +38,7 @@ export function Sidebar({abaAtiva, setAbaAtiva}: SidebarProps){
             {item.label}
           </button>
         ))}
+
       </nav>
     </aside>
   )
