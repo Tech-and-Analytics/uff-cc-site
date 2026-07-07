@@ -16,10 +16,12 @@ import { Simulado } from "@/pages/Simulados/TelaSimulados"
 import { Perfil } from "@/pages/Perfil/Perfil"
 import { Trilhas } from "@/pages/Trilhas/Trilhas"
 import { TelaMaterial } from "@/pages/Trilhas/TelaMaterial"
+import { AnalyticsTracker } from "@/AnalyticsTracker"
 
 export function AppRoutes() {
   return (
     <BrowserRouter>
+    <AnalyticsTracker/>
       <Routes>
 
         {/* AUTH */}
