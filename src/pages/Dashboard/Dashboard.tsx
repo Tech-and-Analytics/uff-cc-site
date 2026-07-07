@@ -1,15 +1,14 @@
-import { useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { ProgressSection } from "@/pages/Dashboard/ProgressSection"
 import { StatusCards } from "@/pages/Dashboard/StatusCards"
-
+import { SEO } from "@/components/SEO"
 // Importe a sua lista de trilhas (ajuste o caminho conforme a sua pasta real)
 import { LISTA_DE_TRILHAS } from "@/pages/Trilhas/mockTrilhas" 
 // O defaultDashboardData ainda pode ser importado se você quiser manter a média de acertos estática por enquanto
 //import { defaultDashboardData } from "@/pages/Dashboard/dashboard"
 
 export function Dashboard() {
-  const navigate = useNavigate()
   
   // 1. Contadores para os Cards (Trilhas inteiras)
   let trilhasConcluidas = 0
@@ -59,6 +58,7 @@ export function Dashboard() {
 
   return (
     <main className="flex flex-1 flex-col gap-8 p-10 bg-background">
+      <SEO title="Meu Dashboard" noindex={true}/>
       <section>
         {/* Passa o nosso novo valor calculado para a barra */}
         <ProgressSection progressoAtual={progressoGeral} />
@@ -77,12 +77,12 @@ export function Dashboard() {
             </p>
           </div>
           
-          <Button 
-            onClick={() => navigate("/Trilhas")}
-            className="bg-brand-dark hover:bg-brand-primary text-white font-semibold h-10 px-6"
-          >
-            Acessar Trilhas
+          <Button asChild className="bg-brand-dark hover:bg-brand-primary text-white font-semibold h-10 px-6">
+            <Link to="/Trilhas" >
+              Acessar Trilhas
+            </Link>
           </Button>
+            
         </div>
 
         <div className="rounded-2xl border border-border bg-card p-10 flex flex-col items-center justify-center text-center shadow-sm">
@@ -96,12 +96,10 @@ export function Dashboard() {
             Você possui trilhas de aprendizagem disponíveis para impulsionar seu conhecimento em consultoria estratégica.
           </p>
           
-          <Button 
-            variant="outline"
-            onClick={() => navigate("/trilhas")}
-            className="border-brand-dark text-brand-dark font-medium hover:bg-brand-light/20"
-          >
-            Ver todas as trilhas disponíveis
+          <Button asChild variant="outline" className="border-brand-dark text-brand-dark font-medium hover:bg-brand-light/20">
+            <Link to="/trilhas" >
+              Ver todas as trilhas disponíveis
+            </Link>
           </Button>
         </div>
       </section>

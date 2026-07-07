@@ -1,9 +1,13 @@
 import { ArrowRight, BookOpen, Briefcase, Users } from "lucide-react";
+import { SEO } from "@/components/SEO"; 
+import { Link } from "react-router-dom";
 
 export function Home() {
   return (
     <main>
       {/* Hero */}
+      <SEO title="Início" description="Desenvolva sua carreira em consultoria e estratégia com a UFF Consulting Club. Trilhas, cases reais e conexão com o mercado."
+      />
       <section className="bg-brand-dark text-white">
         <div className="mx-auto flex max-w-7xl flex-col items-center px-6 py-24 text-center">
           <span className="mb-4 rounded-full bg-brand-primary px-4 py-2 text-sm font-medium">
@@ -21,13 +25,13 @@ export function Home() {
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <button className="rounded-xl bg-brand-vibrant px-6 py-3 font-semibold text-brand-dark transition hover:bg-brand-light">
+            <Link to="/Cadastro" className="rounded-xl bg-brand-vibrant px-6 py-3 font-semibold text-brand-dark transition hover:bg-brand-light">
               Começar agora
-            </button>
+            </Link>
 
-            <button className="rounded-xl border border-brand-light px-6 py-3 font-semibold transition hover:bg-brand-primary">
+            <Link to="/About" className="rounded-xl border border-brand-light px-6 py-3 font-semibold transition hover:bg-brand-primary">
               Conhecer mais
-            </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -223,9 +227,9 @@ export function Home() {
             construa seu diferencial profissional.
           </p>
 
-          <button className="mt-8 rounded-xl bg-brand-vibrant px-8 py-4 font-semibold text-brand-dark transition hover:bg-brand-light">
+          <Link to="/Cadastro" className="inline-flex mt-8 rounded-xl bg-brand-vibrant px-8 py-4 font-semibold text-brand-dark transition hover:bg-brand-light">
             Criar conta
-          </button>
+          </Link>
         </div>
       </section>
     </main>

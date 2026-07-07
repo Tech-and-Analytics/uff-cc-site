@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {type Simulado } from "@/types/Simulado";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/SEO"
 
 interface SimuladoPlayerProps {
   simulado: Simulado;
@@ -34,6 +35,7 @@ export function SimuladoPlayer({ simulado, onVoltar }: SimuladoPlayerProps) {
   return (
     <div className="flex flex-col gap-6 bg-background p-2">
       {/* Barra Superior do Player [cite: 15, 199] */}
+      <SEO title={simulado.title} noindex={true}/>
       <header className="flex justify-between items-center border-b border-border pb-4">
         <div>
           <h2 className="text-xl font-bold text-brand-dark">{simulado.title}</h2>

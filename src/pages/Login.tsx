@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { cn } from "@/lib/utils"
+import { SEO } from "@/components/SEO"
 
 export function Login() {
   const [showError, setShowError] = useState(false)
@@ -16,6 +17,7 @@ export function Login() {
 
   return (
     <div className="flex min-h-screen w-full flex-col md:flex-row">
+      <SEO title="Login" noindex={true} />
       <main className="flex flex-1 flex-col items-center justify-center bg-brand-dark p-10 text-white md:p-10">
         <div className="mb-6 flex h-20 w-[180px] items-center justify-center text-center text-xs">
           LOGO
