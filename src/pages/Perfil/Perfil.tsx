@@ -29,9 +29,9 @@ export function Perfil() {
     <main className="flex flex-1 flex-col p-10 bg-background max-w-7xl mx-auto w-full">
       <SEO title="Meu Perfil" noindex={true}/>
       {/* Cabeçalho estático, sempre ficará visível no topo */}
-      <header className="mb-8">
-        <h1 className="text-[40px] font-bold text-brand-dark">Meu Perfil</h1>
-        <p className="mt-2 text-sm text-neutral-medium">
+      <header className="mb-8 md:mb-8">{/*mb mobile md desktop */}
+        <h1 className="text-3xl md:text-[40px] font-bold text-brand-dark">Meu Perfil</h1>
+        <p className="mt-1 md:mt-2 text-sm text-neutral-medium">
           Gerencie suas informações e acompanhe seu progresso.
         </p>
       </header>
