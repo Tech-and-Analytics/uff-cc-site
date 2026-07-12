@@ -11,7 +11,9 @@ import { NotFound } from "@/pages/NotFound"
 import { Login } from "@/pages/Login"
 
 import { Dashboard } from "@/pages/Dashboard/Dashboard"
-import { Biblioteca } from "@/pages/Biblioteca"
+import { Biblioteca } from "@/pages/Biblioteca/Biblioteca"
+import { AddCase } from "@/pages/Biblioteca/AddCase";
+import { SolCase } from "@/pages/Biblioteca/SolCase";
 import { Simulado } from "@/pages/Simulados/TelaSimulados"
 import { Perfil } from "@/pages/Perfil/Perfil"
 import { Trilhas } from "@/pages/Trilhas/Trilhas"
@@ -33,6 +35,8 @@ export function AppRoutes() {
           <Route path="/simulado" element={<Simulado />} />
           <Route path="/perfil" element={<Perfil />} />
           <Route path="/biblioteca" element={<Biblioteca />} />
+          <Route path="/adicionar" element={<AddCase />} />
+          <Route path="/solucionar/:id" element={<SolCase />} />
           <Route path="/trilhas" element={<Trilhas />} />
           <Route path="/material/:id" element={<TelaMaterial />} />
         </Route>
