@@ -10,7 +10,7 @@ interface TrilhaViewProps {
   trilha: Trilha;
   onVoltar: () => void;
 }
-
+//componente filho - exibe os dados de uma única trilha
 export function TrilhaView({ trilha, onVoltar }: TrilhaViewProps) {
   
   const navigate = useNavigate();

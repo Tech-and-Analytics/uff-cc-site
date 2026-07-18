@@ -5,6 +5,7 @@ import { InformacoesPessoais } from "@/pages/Perfil/InformacoesPessoais"
 import { Configuracoes } from "@/pages/Perfil/Configuracoes"
 import { Historico } from "@/pages/Perfil/Historico"
 import { Indicadores } from "@/pages/Perfil/Indicadores"
+import { SEO } from "@/components/SEO"
 
 export function Perfil() {
   // O estado 'abaAtiva' guarda o ID de qual aba está selecionada.
@@ -26,7 +27,7 @@ export function Perfil() {
   return (
     // Container principal da página de Perfil.
     <main className="flex flex-1 flex-col p-10 bg-background max-w-7xl mx-auto w-full">
-      
+      <SEO title="Meu Perfil" noindex={true}/>
       {/* Cabeçalho estático, sempre ficará visível no topo */}
       <header className="mb-8 md:mb-8">{/*mb mobile md desktop */}
         <h1 className="text-3xl md:text-[40px] font-bold text-brand-dark">Meu Perfil</h1>

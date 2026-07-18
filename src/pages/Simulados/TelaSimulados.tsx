@@ -3,6 +3,7 @@ import { LISTA_DE_SIMULADOS } from "./mockSimulados";
 import {type Simulado } from "@/types/Simulado";
 import { CardSimulado } from "./CardSimulado";
 import { SimuladoPlayer } from "./SimuladoPlayer";
+import { SEO } from "@/components/SEO"
 
 export function Simulado() {
   // Estado que monitora se há um simulado aberto em tela de execução ativa (null significa nenhum)
@@ -23,6 +24,7 @@ export function Simulado() {
   // Se 'simuladoAtivo' for null, renderiza a vitrine de conteúdos padrão da plataforma 
   return (
     <main className="flex flex-1 flex-col p-10 bg-background max-w-7xl mx-auto w-full">
+      <SEO title="Simulados" description="Simulados de diversos conteúdos"/>
       {/* Título Institucional da Seção como Heading 1 (40px) [cite: 16] */}
       <header className="mb-8">
         <h1 className="text-[40px] font-bold text-brand-dark">Biblioteca de Simulados</h1> 

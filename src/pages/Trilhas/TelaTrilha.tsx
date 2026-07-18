@@ -3,6 +3,7 @@ import { LISTA_DE_TRILHAS } from "./mockTrilhas";
 import type { Trilha } from "@/types/Trilhas"
 import { CardTrilha } from "./CardTrilha";
 import { TrilhaView } from "./TrilhaView";
+import { SEO } from "@/components/SEO";
 
 export function TelaTrilhas() {
   // Estado para armazenar qual trilha está aberta no momento
@@ -23,6 +24,7 @@ export function TelaTrilhas() {
   // Visualização Padrão: Vitrine de Trilhas
   return (
     <main className="flex flex-1 flex-col p-10 bg-background max-w-7xl mx-auto w-full">
+      <SEO title="Trilhas de Aprendizagem" description="Explore trilhas de aprendizagem na área de consultoria estratégica."/>
       <header className="mb-8">
         <h1 className="text-[40px] font-bold text-brand-dark">Trilhas de Aprendizagem</h1>
         <p className="mt-2 text-sm text-neutral-medium">

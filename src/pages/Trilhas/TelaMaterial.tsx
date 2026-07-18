@@ -3,6 +3,7 @@
 import { useParams, useNavigate } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { LISTA_DE_MATERIAIS } from "./mockMateriais" // Importamos o nosso banco de dados
+import { SEO } from "@/components/SEO"
 
 export function TelaMaterial() {
   // 1. O React Router captura a variável dinâmica da URL
@@ -26,6 +27,7 @@ export function TelaMaterial() {
   // 4. Se encontrou, renderiza o "Molde" preenchendo com os dados do material encontrado
   return (
     <main className="flex flex-1 flex-col p-10 bg-background max-w-4xl mx-auto w-full">
+      < SEO title={material.titulo} description={'Aprenda sobre ${material.categoria} neste material preparado pelo UFF Consulting Club.'}/>
       <nav className="mb-8">
         <Button variant="ghost" onClick={() => navigate(-1)} className="text-sm text-neutral-medium px-0">
           ← Voltar
