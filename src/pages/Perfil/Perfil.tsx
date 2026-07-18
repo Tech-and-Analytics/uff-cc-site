@@ -35,7 +35,7 @@ export function Perfil() {
           Gerencie suas informações e acompanhe seu progresso.
         </p>
       </header>
-
+      
       {/* Container que divide a tela em duas colunas no Desktop (md:flex-row) */}
       <div className="flex flex-col md:flex-row gap-8">
         

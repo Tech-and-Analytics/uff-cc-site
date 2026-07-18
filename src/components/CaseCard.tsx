@@ -1,11 +1,14 @@
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface CaseCardProps {
+  id: string;
   title: string;
   description: string;
   imageUrl: string;
   difficulty: "Iniciante" | "Intermediário" | "Avançado";
   estimatedTime: string;
+  content: string;
 }
 
 export function CaseCard({
@@ -43,10 +46,13 @@ export function CaseCard({
           {description}
         </p>
 
-        <button className="flex items-center gap-2 font-medium text-primary transition-colors hover:text-brand-medium">
+        <Link 
+          to="/solucionar/1" // O '1' seria o ID do case dinâmico no futuro
+          className="flex items-center gap-2 font-medium text-primary transition-colors hover:text-brand-medium"
+        >
           Ver Case
           <ArrowRight size={18} />
-        </button>
+        </Link>
       </div>
     </div>
   );

@@ -103,6 +103,34 @@ export function Dashboard() {
           </Button>
         </div>
       </section>
+      <section className="mt-4 pt-8 border-t border-border">
+        <h2 className="text-xl font-semibold text-brand-dark mb-4">Ações Rápidas</h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Card do Formulário */}
+          <div className="rounded-2xl border border-border bg-card p-6 flex items-center justify-between shadow-sm">
+            <div>
+              <h3 className="font-bold text-foreground">Feedback da Plataforma</h3>
+              <p className="text-sm text-neutral-medium mt-1">
+                Ajude-nos a melhorar. Preencha nosso formulário de avaliação.
+              </p>
+            </div>
+            
+            {/* O BOTÃO COM O LINK EXTERNO */}
+            <Button asChild className="bg-brand-dark hover:bg-brand-primary text-white font-medium ml-4 shrink-0">
+              <a 
+                href="https://docs.google.com/forms/d/e/1FAIpQLSeCYUq5tF6YuOPyLCqTSDz1Yv_6CiGckak_N4cYwEYQu--XsQ/viewform?usp=publish-editor" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Abrir Formulário ↗
+              </a>
+            </Button>
+          </div>
+
+          {/* Você pode adicionar outros cards úteis aqui no futuro (ex: Suporte, Grupo do WhatsApp) */}
+        </div>
+      </section>
     </main>
   )
 }

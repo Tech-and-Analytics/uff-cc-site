@@ -15,6 +15,8 @@ const navItems = [
   { to: "/perfil", label: "Usuario", icon: User },
   { to: "/biblioteca", label: "Biblioteca", icon: BookMarked },
   { to: "/simulado", label: "Simulados", icon: FileText },
+  { to: "/feedback", label: "Feedback", icon: FileText}
+
 ] as const
 
 export function Sidebar() {
