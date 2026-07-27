@@ -14,7 +14,7 @@ export function Header() {
         >
           {/* Substituir pela logo oficial futuramente */}
           <img
-            src="/logoPreta.png"
+            src="/logo_branca.png"
             alt="UFF Consulting Club"
             className="h-12 w-auto"
           />

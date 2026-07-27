@@ -13,7 +13,7 @@ export function Footer() {
             className="flex items-center gap-3 transition-opacity hover:opacity-90"
           >
           <img
-            src="/logoPreta.png"
+            src="/logo_branca.png"
             alt="UFF Consulting Club"
             className="h-12 w-auto"
           />

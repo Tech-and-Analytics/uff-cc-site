@@ -41,7 +41,7 @@ export function Home() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-12 text-center">
             <h2 className="text-4xl font-bold text-foreground">
-              O que é a UFF Consulting Club?
+              O que é o UFF Consulting Club?
             </h2>
 
             <p className="mx-auto mt-4 max-w-3xl text-muted-foreground">
