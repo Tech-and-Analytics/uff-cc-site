@@ -5,7 +5,7 @@ import { Navbar } from "./Navbar";
 export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-brand-primary bg-brand-dark text-white shadow-sm">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+      <div className="mx-auto flex h-20 text-base lg:text-2xl max-w-7xl items-center justify-between px-6">
         
         {/* Logo */}
         <Link
@@ -16,13 +16,10 @@ export function Header() {
           <img
             src="/logo_branca.png"
             alt="UFF Consulting Club"
-            className="h-12 w-auto"
+            className="h-auto w-35"
           />
 
           <div className="flex flex-col">
-            <span className="text-lg font-bold leading-none">
-              UFF Consulting Club
-            </span>
           </div>
         </Link>
 

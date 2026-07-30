@@ -26,7 +26,7 @@ export function Navbar() {
       <Link
         to="/login"
         className="rounded-full p-2 text-white transition-colors hover:bg-brand-primary">
-        <User size={22} />
+        <User size={30} />
       </Link>
     </nav>
   );

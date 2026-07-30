@@ -47,7 +47,7 @@ export function AppRoutes() {
           <Route path="/sobre" element={<About />} />
           <Route path="/cases" element={<Cases />} />
           <Route path="/contato" element={<Contact />} />
-        </Route>
+        </Route>z
 
         {/* 404 */}
         <Route path="*" element={<NotFound />} />

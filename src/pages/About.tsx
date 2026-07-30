@@ -1,36 +1,35 @@
 import { SEO } from "@/components/SEO"
+import { Carousel } from "@/components/Carousel"
 
 export function About() {
+  let slides = [
+     "/foto1.jpg",
+     "/foto2.jpg"]
+  
   return (
-      <main className="min-h-screen bg-background py-24">
+      <main className="min-h-screen bg-background py-12">
         <SEO title="Sobre" description="Conheça o UFF Consulting Club e nosso propósito."/>
         
-        <section className="mx-auto max-w-7xl px-6">
-      
-            <h1 className="text-4xl font-bold">Sobre Nós</h1>
-            <div className="mx-auto mt-4 max-w-3xl text-muted-foreground">
-              <p>Somos uma organização estudantil formada no curso de Engenharia de Produção da 
-                Universidade Federal Fluminense dedicada a preparar alunos para carreiras de sucesso 
-                em consultoria. Oferecemos uma ampla gama de recursos e atividades, facilitamos 
-                networking com profissionais do setor e ex-alunos, proporcionando oportunidades 
-                valiosas para conexões e mentoria. Além disso, promovemos projetos práticos para 
-                aplicação de conhecimentos, garantimos acesso a materiais de estudo e guias de 
-                carreira, bem como palestras com líderes da indústria. 
-              </p>
+        <section className="bg-white text-brand-dark">
+          <div className="mx-auto flex max-w-7xl flex-col items-center px-6 py-5 text-center">
+            <h1 className="max-w-4xl text-5xl font-black">UFF Consulting Club</h1>
+            <h2 className="max-w-4xl text-lg">Tranformando potencial acadêmico em trajetória profissional</h2>
+          </div>
+        </section>
+
+        <section className="bg-brand-dark text-white mx-auto max-w-7xl py-10 px-6 rounded-2xl mt-12">
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            
+            <div className="w-full lg:w-1/2 space-y-4">
+              <h2 className="text-3xl font-bold ">Sobre nós</h2>
+              <h3 className="py-3 text-lg leading-relaxed text-gray-200">Fundado em Abril de 2024, o UFF Consulting Club tem como objetivo reunir e capacitar alunos(as) da UFF interessados(as) em atuar na área de consultoria estratégica, a fim de garantir a eles preparação para as etapas dos processos seletivos e contato com o mercado</h3>
             </div>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 ">
-            <img 
-              src="public\foto1.jpg" 
-              alt="Membros do UFF Consulting Club em visita" 
-              className="h-80 w-full rounded-2xl object-cover shadow-lg sm:mt-12"
-            />            <img 
-              src="public\foto2.jpg" 
-              alt="Apresentação de resolução de cases" 
-              className="h-80 w-full rounded-2xl object-cover shadow-lg sm:mt-12"
-            />
+            <div className="w-full lg:w-1/2 ">
+              <Carousel slides={slides} />
+            </div>
           </div>
         </section>
       </main>
       
-  )
+  );
 }
