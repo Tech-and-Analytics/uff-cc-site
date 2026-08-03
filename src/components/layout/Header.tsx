@@ -12,7 +12,6 @@ export function Header() {
           to="/"
           className="flex items-center gap-3 transition-opacity hover:opacity-90"
         >
-          {/* Substituir pela logo oficial futuramente */}
           <img
             src="/logo_branca.png"
             alt="UFF Consulting Club"
@@ -25,6 +24,7 @@ export function Header() {
 
         {/* Navegação */}
         <Navbar />
+
       </div>
     </header>
   );

@@ -1,5 +1,11 @@
 import { SEO } from "@/components/SEO"
-import { Carousel } from "@/components/Carousel"
+import { CardProp } from "@/components/homepage/CardProp";
+import { Carousel } from "@/components/homepage/Carousel"
+
+import {  Pencil } from "lucide-react";
+import { BookOpen } from "lucide-react";
+import { Users } from "lucide-react";
+import { Share2 } from "lucide-react";
 
 export function About() {
   let slides = [
@@ -9,7 +15,7 @@ export function About() {
   return (
       <main className="min-h-screen bg-background py-12">
         <SEO title="Sobre" description="Conheça o UFF Consulting Club e nosso propósito."/>
-        
+        {/*cabecalho */}
         <section className="bg-white text-brand-dark">
           <div className="mx-auto flex max-w-7xl flex-col items-center px-6 py-5 text-center">
             <h1 className="max-w-4xl text-5xl font-black">UFF Consulting Club</h1>
@@ -17,6 +23,7 @@ export function About() {
           </div>
         </section>
 
+        {/*carrossel */}
         <section className="bg-brand-dark text-white mx-auto max-w-7xl py-10 px-6 rounded-2xl mt-12">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             
@@ -27,6 +34,36 @@ export function About() {
             <div className="w-full lg:w-1/2 ">
               <Carousel slides={slides} />
             </div>
+          </div>
+        </section>
+
+        {/*propositos */}
+        <section className="bg-white text-brand-dark py-15">
+          <div className="mx-auto flex max-w-7xl flex-col items-center px-6 text-center">
+            <h1 className="max-w-4xl text-5xl font-black">Propósitos</h1>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 py-10 px-8">
+            <CardProp
+              numero = "1"
+              icone = {<Pencil/>}
+              texto="Preparar membros para prestarem os processos seletivos das consultorias;"
+            />
+            <CardProp
+              numero = "2"
+              icone = {<BookOpen/>}
+              texto="Promover conhecimento a respeito do mercado de consultoria;"
+            />
+            <CardProp
+              numero = "3"
+              icone = {<Users/>}
+              texto="Capacitar membros par o mercado de trabalho no geral;"
+            />
+            <CardProp
+              numero = "4"
+              icone = {<Share2/>}
+              texto="Enriquecer a comunidade da UFF a partir do networking com empresas do setor de Consultoria Estratéca."
+            />
+
           </div>
         </section>
       </main>
