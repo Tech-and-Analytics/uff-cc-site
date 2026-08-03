@@ -45,22 +45,22 @@ export function About() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 py-10 px-8">
             <CardProp
               numero = "1"
-              icone = {<Pencil/>}
+              icone = {<Pencil size={80}/>}
               texto="Preparar membros para prestarem os processos seletivos das consultorias;"
             />
             <CardProp
               numero = "2"
-              icone = {<BookOpen/>}
+              icone = {<BookOpen size={80}/>}
               texto="Promover conhecimento a respeito do mercado de consultoria;"
             />
             <CardProp
               numero = "3"
-              icone = {<Users/>}
+              icone = {<Users size={80}/>}
               texto="Capacitar membros par o mercado de trabalho no geral;"
             />
             <CardProp
               numero = "4"
-              icone = {<Share2/>}
+              icone = {<Share2 size={80}/>}
               texto="Enriquecer a comunidade da UFF a partir do networking com empresas do setor de Consultoria Estratéca."
             />
 
