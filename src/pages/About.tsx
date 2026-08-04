@@ -24,12 +24,12 @@ export function About() {
         </section>
 
         {/*carrossel */}
-        <section className="bg-brand-dark text-white mx-auto max-w-7xl py-10 px-6 rounded-2xl mt-12">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
+        <section className="bg-brand-dark text-white py-10 mt-12">
+          <div className="flex flex-col lg:flex-row items-center gap-12 px-10">
             
             <div className="w-full lg:w-1/2 space-y-4">
-              <h2 className="text-3xl font-bold ">Sobre nós</h2>
-              <h3 className="py-3 text-lg leading-relaxed text-gray-200">Fundado em Abril de 2024, o UFF Consulting Club tem como objetivo reunir e capacitar alunos(as) da UFF interessados(as) em atuar na área de consultoria estratégica, a fim de garantir a eles preparação para as etapas dos processos seletivos e contato com o mercado</h3>
+              <h2 className="text-3xl font-bold">Sobre nós</h2>
+              <h3 className="py-3 text-lg leading-relaxed text-white">Fundado em Abril de 2024, o UFF Consulting Club tem como objetivo reunir e capacitar alunos(as) da UFF interessados(as) em atuar na área de consultoria estratégica, a fim de garantir a eles preparação para as etapas dos processos seletivos e contato com o mercado</h3>
             </div>
             <div className="w-full lg:w-1/2 ">
               <Carousel slides={slides} />
